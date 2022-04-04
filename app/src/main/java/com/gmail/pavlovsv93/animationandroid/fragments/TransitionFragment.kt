@@ -1,6 +1,7 @@
 package com.gmail.pavlovsv93.animationandroid.fragments
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,7 @@ class TransitionFragment : Fragment() {
 
 			val transition = TransitionSet()
 			val slide = Slide()
+			slide.slideEdge = Gravity.END // Слайд по гравитации вправо
 			slide.duration = 2000
 			val fade = Fade()
 			fade.duration = 2000 // длительность анимации fade
