@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.transition.TransitionManager
+import androidx.transition.*
 import com.gmail.pavlovsv93.animationandroid.databinding.FragmentTransitionBinding
 
 class TransitionFragment : Fragment() {
@@ -36,8 +36,20 @@ class TransitionFragment : Fragment() {
 		super.onViewCreated(view, savedInstanceState)
 
 		binding.ftBnt.setOnClickListener {
+
+			val transition = TransitionSet()
+			val slide = Slide()
+			slide.duration = 2000
+			val fade = Fade()
+			fade.duration = 2000 // длительность анимации fade
+			val changeBounds = ChangeBounds()
+			changeBounds.duration = 2000 // длительность анимации changeBounts
+			transition.addTransition(slide)
+			transition.addTransition(fade)
+			transition.addTransition(changeBounds)
+			transition.ordering = TransitionSet.ORDERING_TOGETHER // Началь анимацию одновременно у всех элементов
 			// todo Анимация внутри контейнера AutoTransition
-			TransitionManager.beginDelayedTransition(binding.fragmentTransitionContainer)
+			TransitionManager.beginDelayedTransition(binding.fragmentTransitionContainer, transition)
 			if (!flag) {
 				binding.ftTextView.visibility = View.VISIBLE
 			} else {
