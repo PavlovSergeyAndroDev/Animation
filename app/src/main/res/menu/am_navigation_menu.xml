@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:title="Transition"
+		android:icon="@drawable/ic_baseline_directions_transit_24"
+		android:id="@+id/transition"/>
+	<item android:id="@+id/zoom"
+		android:icon="@drawable/ic_baseline_zoom_in_24"
+		android:title="Zoom"/>
+	<item android:id="@+id/trajectory"
+		android:icon="@drawable/ic_baseline_zoom_in_24"
+		android:title="Trajectory"/>
+	<item android:id="@+id/object_animation"
+		android:icon="@drawable/ic_baseline_zoom_in_24"
+		android:title="OdjectAnimatoin"/>
+	<item android:id="@+id/nimator"
+		android:icon="@drawable/ic_baseline_zoom_in_24"
+		android:title="Nimator"/>
+
+</menu>
