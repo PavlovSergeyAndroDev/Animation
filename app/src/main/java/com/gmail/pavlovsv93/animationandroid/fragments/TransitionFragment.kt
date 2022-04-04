@@ -36,7 +36,7 @@ class TransitionFragment : Fragment() {
 		super.onViewCreated(view, savedInstanceState)
 
 		binding.ftBnt.setOnClickListener {
-			// todo Анимация внутри контейнера
+			// todo Анимация внутри контейнера AutoTransition
 			TransitionManager.beginDelayedTransition(binding.fragmentTransitionContainer)
 			if (!flag) {
 				binding.ftTextView.visibility = View.VISIBLE
