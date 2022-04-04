@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.gmail.pavlovsv93.animationandroid.databinding.ActivityMainBinding
+import com.gmail.pavlovsv93.animationandroid.fragments.ExplodeFragment
 import com.gmail.pavlovsv93.animationandroid.fragments.TransitionFragment
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 					true
 				}
 				R.id.nimator -> {
+					showFragment(ExplodeFragment.newInstance())
 					true
 				}
 				else -> false
