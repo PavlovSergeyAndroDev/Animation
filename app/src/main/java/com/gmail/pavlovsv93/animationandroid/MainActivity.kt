@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.gmail.pavlovsv93.animationandroid.databinding.ActivityMainBinding
 import com.gmail.pavlovsv93.animationandroid.fragments.ExplodeFragment
+import com.gmail.pavlovsv93.animationandroid.fragments.TrajectoryMovementFragment
 import com.gmail.pavlovsv93.animationandroid.fragments.TransitionFragment
 import com.gmail.pavlovsv93.animationandroid.fragments.ZoomFragment
 
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 					true
 				}
 				R.id.trajectory -> {
+					showFragment(TrajectoryMovementFragment.newInstance())
 					true
 				}
 				R.id.object_animation -> {
