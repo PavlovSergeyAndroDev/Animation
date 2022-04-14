@@ -1,5 +1,6 @@
 package com.gmail.pavlovsv93.animationandroid.fragments
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,16 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.Explode
+import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.gmail.pavlovsv93.animationandroid.R
 import com.gmail.pavlovsv93.animationandroid.databinding.FragmentExplodeBinding
 
 class ExplodeFragment : Fragment() {
-	private var _binding : FragmentExplodeBinding? = null
+	private var _binding: FragmentExplodeBinding? = null
 	private val binding get() = _binding!!
 	private var flag = false
 
-	companion object{
+	companion object {
 		fun newInstance() = ExplodeFragment()
 	}
 
@@ -39,8 +41,16 @@ class ExplodeFragment : Fragment() {
 		binding.recyclerViewExplode.adapter = ExplodeAdapter()
 	}
 
-	private fun explode(clickedItemView: View){
+	private fun explode(clickedItemView: View) {
 		val explode = Explode()
+		explode.excludeTarget(clickedItemView, true)
+		val rect = Rect()
+		clickedItemView.getGlobalVisibleRect(rect)
+		explode.epicenterCallback = object : Transition.EpicenterCallback() {
+			override fun onGetEpicenter(transition: Transition): Rect {
+				return rect
+			}
+		}
 		explode.duration = 2000
 		TransitionManager.beginDelayedTransition(binding.recyclerViewExplode, explode)
 		binding.recyclerViewExplode.adapter = null

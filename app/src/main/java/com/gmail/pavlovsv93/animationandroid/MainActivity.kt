@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.gmail.pavlovsv93.animationandroid.databinding.ActivityMainBinding
 import com.gmail.pavlovsv93.animationandroid.fragments.ExplodeFragment
 import com.gmail.pavlovsv93.animationandroid.fragments.TransitionFragment
+import com.gmail.pavlovsv93.animationandroid.fragments.ZoomFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 					true
 				}
 				R.id.zoom -> {
+					showFragment(ZoomFragment.newInstance())
 					true
 				}
 				R.id.trajectory -> {
