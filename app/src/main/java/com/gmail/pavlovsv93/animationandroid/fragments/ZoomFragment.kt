@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.transition.ChangeBounds
 import androidx.transition.ChangeImageTransform
 import androidx.transition.TransitionManager
+import com.davemorrissey.labs.subscaleview.ImageSource
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+import com.gmail.pavlovsv93.animationandroid.R
 import com.gmail.pavlovsv93.animationandroid.databinding.FragmentZoomBinding
 
 class ZoomFragment : Fragment() {
@@ -38,19 +41,7 @@ class ZoomFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-
-		binding.fzImageView.setOnClickListener {
-			val cbt = ChangeImageTransform()
-			cbt.duration = 1500
-			TransitionManager.beginDelayedTransition(binding.containerZoom, cbt)
-			flag = !flag
-			binding.fzImageView.scaleType = if (flag) {
-				ImageView.ScaleType.CENTER_CROP
-			} else {
-				ImageView.ScaleType.CENTER_INSIDE
-			}
-
-		}
+			binding.imageView.setImage(ImageSource.resource(R.drawable.image))
 	}
 
 }

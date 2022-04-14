@@ -5,15 +5,19 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
-	<androidx.appcompat.widget.AppCompatImageView
-			android:id="@+id/fz_image_view"
+	<com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+			android:id="@+id/imageView"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:scaleType="centerInside"
-			app:srcCompat="@drawable/image" />
-
+			android:layout_height="match_parent"
+			android:layout_gravity="center" />
 </FrameLayout>
+<!--<androidx.appcompat.widget.AppCompatImageView-->
+<!--android:id="@+id/fz_image_view"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_gravity="center"-->
+<!--android:scaleType="centerInside"-->
+<!--app:srcCompat="@drawable/image" />-->
 
-		<!--android:scaleType="centerCrop"-->
-		<!--Для увеличения картинки необходимо менять scaleType-->
+<!--android:scaleType="centerCrop"-->
+<!--Для увеличения картинки необходимо менять scaleType-->
